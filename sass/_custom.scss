@@ -1,3 +1,96 @@
 // Your custom SCSS should be written here...
 
 @import '../bower_components/gumby-parallax/_parallax.scss';
+
+// Global
+
+html {
+    height: 2000px;
+}
+
+// Fonts
+
+.googleFonts {
+    font-size: 30px;
+    text-align: left;
+    margin-top: 5px;
+    font-family: 'Open Sans', cursive;
+    letter-spacing: -1px;
+    color: #FFF;
+    text-shadow: 0 -1px 0 white;
+    /*font-variant: small-caps;*/
+}
+
+// Navigation
+
+.navbar {
+    margin-bottom: 0px;
+    background-colour: rgba(0,0,0,.75);
+}
+
+// Parallax
+
+.parallax {
+    background-size: cover;
+    background-repeat: no-repeat;
+    &#one {
+        background-image: url(../img/background/green.jpg);
+    }
+    &#two {
+        background-image: url(../img/background/velvet-noise.jpg);
+    }
+    &#three {
+        background-image: url(../img/background/moonstreet.jpg);
+    }
+}
+
+.container {
+    @include row();
+}
+
+.margins {
+    background: rgba(255,255,255,.15);
+    margin: 360px auto;
+    padding: 30px;
+    border-radius: 30px;
+    article {
+        background: #FFF;
+        border-radius: 20px;
+        padding: 60px;
+        text-align: center;
+    }
+}
+
+.skiplink {
+    background: none;
+    &:hover a {
+        background: rgba(80,80,80,.5);
+    }
+}
+
+h3 {
+    cursor: pointer;
+    -webkit-transform: scale(1);
+    -moz-transform: scale(1);
+    opacity: 1;
+    transition: all 400ms ease;
+    &.togg1.active, &.togg2.active, &.togg3.active {
+        -webkit-transform: scale(0);
+        -moz-transform: scale(0);
+        opacity: 0;
+    }
+}
+
+p {
+    cursor:pointer;
+    -webkit-transform: scale(0);
+    -moz-transform: scale(0);
+    opacity: 0;
+    margin-top: -80px;
+    transition: all 400ms ease;
+    &.togg1.active, &.togg2.active, &.togg3.active {
+        -webkit-transform: scale(1);
+        -moz-transform: scale(1);
+        opacity: 1;
+    }
+}
